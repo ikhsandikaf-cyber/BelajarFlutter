@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                 if (username == "admin" && password == "admin") {
                   print("sukses login");
 
-                  // 👈 2. Pindahkan langsung ke KalkulatorPage saat sukses
+                  
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 } else {
                   setState(() {
-                    // fungsinya untuk reload / refresh satu page full
+                    
                     statusLogin = "failed";
                     print("gagal login");
                   });

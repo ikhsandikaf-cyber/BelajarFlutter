@@ -16,7 +16,7 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
 
   String hasil = "0";
 
-  // Fungsi menghitung
+  
   void hitung(String operator) {
     double? angka1 = double.tryParse(angka1Controller.text);
     double? angka2 = double.tryParse(angka2Controller.text);
@@ -51,7 +51,7 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
     });
   }
 
-  // Fungsi reset
+  
   void reset() {
     angka1Controller.clear();
     angka2Controller.clear();
@@ -142,7 +142,7 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
 
             const SizedBox(height: 15),
 
-            // Hasil
+            
             Text(
               "Hasil : $hasil",
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -150,7 +150,7 @@ class _KalkulatorPageState extends State<KalkulatorPage> {
 
             const SizedBox(height: 15),
 
-            // Reset menggunakan CustomButton universal
+            
             CustomButton(
               labelButton: "Reset",
               backgroundColor: Colors.blue,
