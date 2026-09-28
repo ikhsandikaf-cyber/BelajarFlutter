@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'components/custom_textfield.dart';
-import 'components/custom_button.dart';
-import 'kalkulator_page.dart'; 
+import 'package:my_app/components/custom_textfield.dart';
+import 'package:my_app/components/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,62 +12,61 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController txtUsername = TextEditingController();
   TextEditingController txtPassword = TextEditingController();
+
   String statusLogin = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("login page")),
+      appBar: AppBar(
+        title: const Text("login page"),
+      ),
       body: Column(
         children: [
           Text(
             "Welcome to application " + statusLogin,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
-              color: const Color.fromARGB(255, 46, 9, 182),
+              color: Color.fromARGB(255, 46, 9, 182),
               fontWeight: FontWeight.bold,
             ),
           ),
+
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: CustomTextfield(
               myHint: "input username",
               txtController: txtUsername,
             ),
           ),
+
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: CustomTextfield(
               myHint: "input password",
               txtController: txtPassword,
             ),
           ),
-         
+
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: CustomButton(
               labelButton: "Login",
+              backgroundColor: const Color.fromARGB(255, 12, 12, 12),
+              textColor: Colors.white,
               onPressed: () {
-                String username = txtUsername.text.toString();
-                String password = txtPassword.text.toString();
+                setState(() {
+                  String username = txtUsername.text.toString();
+                  String password = txtPassword.text.toString();
 
-                if (username == "admin" && password == "admin") {
-                  print("sukses login");
-
-                  
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const KalkulatorPage(),
-                    ),
-                  );
-                } else {
-                  setState(() {
-                    
+                  if (username == "admin" && password == "admin") {
+                    statusLogin = "admin";
+                    print("sukses login");
+                  } else {
                     statusLogin = "failed";
                     print("gagal login");
-                  });
-                }
+                  }
+                });
               },
             ),
           ),

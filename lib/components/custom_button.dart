@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String labelButton;
   final VoidCallback onPressed;
-  final Color backgroundColor; 
-  final Color textColor;       
+  final Color backgroundColor;
+  final Color textColor;
 
   const CustomButton({
     super.key,
     required this.labelButton,
     required this.onPressed,
-    this.backgroundColor = Colors.blue, 
+    this.backgroundColor = Colors.blue,
     this.textColor = Colors.white,
   });
 
