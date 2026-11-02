@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
-  final String text;
-  final double fontSize;
-  final FontWeight fontWeight;
-  final Color textColor;
+
+  final TextEditingController textController;
+  final Color? textColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final Color? hintColor;
 
   const CustomText({
     super.key,
-    required this.text,
-    this.fontSize = 16,               
-    this.fontWeight = FontWeight.normal, 
-    this.textColor = Colors.black,     
+    required this.textController,
+    this.textColor, 
+    this.fontSize,
+    this.fontWeight, this.hintColor,
+  
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
+    return TextField(
+      controller: textController,
+
       style: TextStyle(
+        color: textColor,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        color: textColor,
       ),
+   
     );
   }
 }

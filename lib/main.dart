@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'pages/kalkulator_page.dart'; 
+import 'package:get/get.dart';
 
+import 'routes.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -8,11 +9,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: KalkulatorPage(),
+    return GetMaterialApp(
+       title: "Belajar Flutter Getx",
+      initialRoute: Routes.loginpage,
+      getPages: Routes.myPages,
     );
+  
   }
 }
